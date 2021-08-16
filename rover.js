@@ -36,7 +36,7 @@ class Rover {
          this.mode = message.commands[i].value; 
           }
       }      
-
+      return response
       }
    };
   
