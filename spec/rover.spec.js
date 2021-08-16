@@ -69,13 +69,13 @@ describe("Rover class", function() {
     /*expect(response.results[1].completed).toEqual(false);*/
   })
 
-  /*it("responds with position for move command" , function() {
+  it("responds with position for move command" , function() {
 
     let rover = new Rover(9999);
       let commands = [new Command("MOVE", 9090)];
       let message = new Message("testmove", commands);
       let response = rover.receiveMessage(message);
-      expect(response.results[1].completed).toEqual(true);
+      /*expect(response.results[1].completed).toEqual(true);*/
       expect (rover.position).toEqual(9090);
-  })*/
+  })
 });
