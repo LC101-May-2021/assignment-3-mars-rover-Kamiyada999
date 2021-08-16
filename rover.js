@@ -5,7 +5,7 @@ class Rover {
       this.mode = mode;
       this.generatorWatts = generatorWatts;     
     }
-    receiveMessage() {
+    receiveMessage(message) {
       let response = {message:message.name , results:[]};
   
       for(let i = 0; i < message.commands.length; i++) {
@@ -26,14 +26,14 @@ class Rover {
       else {
             response.results.push({
             completed: true });
-            this.position = message.commands[i]; 
+            this.position = message.commands[i].value; 
          };
         
           } 
       else if (message.commands[i].commandType === "MODE_CHANGE") {
          response.results.push({
          completed:true});
-         this.mode = message.commands[i]; 
+         this.mode = message.commands[i].value; 
           }
       }      
 
