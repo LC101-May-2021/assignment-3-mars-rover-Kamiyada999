@@ -19,7 +19,7 @@ describe("Rover class", function() {
 
   })
 
-  /*it("response returned by receiveMessage contains name of message" , function() {
+  it("response returned by receiveMessage contains name of message" , function() {
 
     let rover = new Rover(9999);
     let commands = [new Command("MODE_CHANGE"), new Command("STATUS_CHECK")];
@@ -33,7 +33,7 @@ describe("Rover class", function() {
     let rover = new Rover(9999);
     let message = new Message("test2" , [new Command("MODE_CHANGE" , "MOVE"), new Command("STATUS_CHECK")]);
     let response = rover.receiveMessage(message).message;
-    /*expect(response.results.length).toEqual(2);
+    expect(response.results.length).toEqual(2);
 
   })
 
@@ -77,5 +77,5 @@ describe("Rover class", function() {
       let response = rover.receiveMessage(message);
       expect(response.results[1].completed).toEqual(true);
       expect (rover.position).toEqual(9090);
-  })*/
+  })
 });
