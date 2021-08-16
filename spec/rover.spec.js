@@ -33,7 +33,7 @@ describe("Rover class", function() {
     let rover = new Rover(9999);
     let message = new Message("test2" , [new Command("MODE_CHANGE" , "MOVE"), new Command("STATUS_CHECK")]);
     let response = rover.receiveMessage(message).message;
-    expect(response.results.length).toEqual(2);
+    expect(response.results).toEqual(2);
 
   })
 
