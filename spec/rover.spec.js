@@ -51,7 +51,7 @@ describe("Rover class", function() {
 
   it("responds correctly to mode change command" , function() {
     
-    let rover = new Rover(999);
+    let rover = new Rover(9999);
     let commands = [new Command("MODE_CHANGE" , "LOW_POWER") , new Command("STATUS_CHECK")];
     let message = new Message("testlow", commands);
     let response = rover.receiveMessage(message);
