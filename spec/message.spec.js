@@ -10,7 +10,7 @@ describe("Message class", function() {
     expect( function() { new Message();}).toThrow(new Error('Message name required.'));
   });
 
-  it("constructor sets name", function() {
+  /*it("constructor sets name", function() {
     let message = new Message('New message!');
     expect(message.name).toEqual('New message!');
   });
@@ -19,6 +19,6 @@ describe("Message class", function() {
     let commands = [new Command('STATUS_CHECK'), new Command('MOVE', 20)];
     let message = new Message('Another message!', commands);
     expect(message.commands).toEqual(commands);
-  });
+  });*/
 
 });
