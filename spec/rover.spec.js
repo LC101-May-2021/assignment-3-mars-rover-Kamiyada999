@@ -32,7 +32,8 @@ describe("Rover class", function() {
     
     let rover = new Rover(9999);
     let message = new Message("test2" , [new Command("MODE_CHANGE" , "MOVE"), new Command("STATUS_CHECK")]);
-    let response = rover.receiveMessage(message).message;
+    let response = rover.receiveMessage(message);
+    console.log(response.results.length)
     expect(response.results.length).toEqual(2);
 
   })
@@ -63,12 +64,14 @@ describe("Rover class", function() {
   it("responds with false completed value when attempting to move in LOW_POWER mode" , function() {
 
     let rover = new Rover(9999);
-    let commands = [new Command("MOVE", 9090) , new Command("MODE_CHANGE" , "LOW_POWER")];
+    let commands = [new Command("MOVE", 9090) , new Command("MODE_CHANGE" , "LOW_POWER"),new Command("MOVE" , "LOW_POWER" )];
+  
     let message = new Message("testnomove", commands);
     let response = rover.receiveMessage(message);
-    expect(response.results[1].completed).toEqual(false);
+    console.log(response.results[2].completed)
+    expect(response.results[2].completed).toEqual(false);
   })
-
+ 
   it("responds with position for move command" , function() {
 
     let rover = new Rover(9999);
